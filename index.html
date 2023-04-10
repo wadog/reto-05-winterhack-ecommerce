@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- HTML Meta Tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- META AUTHOR -->
+    <meta name="author" content="Walter Maximo Torres" />
+
+    <!-- META COPYRIGHT -->
+    <meta name="copyright" content="Walter Torres 2022" />
+
+    <!-- ROBOTS -->
+    <meta name="robots" content="index follow" />
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://reto-02-winterhack.web.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="reto 03 del winterhack de Escuela DevRock">
+    <meta property="og:description" content="webapp to do list">
+    <meta property="og:image" content="public/img/logo.png">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="https://reto-02-winterhack.web.app/">
+    <meta property="twitter:url" content="https://reto-02-winterhack.web.app/">
+    <meta name="twitter:title" content="reto 03 del winterhack de Escuela DevRock">
+    <meta name="twitter:description" content="webapp to do list">
+    <meta name="twitter:image" content="public/img/logo.png">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Reto - 05 -</title>
+</head>
+
+<body>
+    <header>
+        <div class="seccion header dNone">
+            <div class="logo">
+                <a class="navbar-brand" href="#" onclick="volverHome()">
+                    <img src="img/carro-de-la-compra.png" alt="Bootstrap" width="30" height="24">
+                </a>
+            </div>
+            <div class="container">
+                <a class="navbar-brand" href="#" onclick="hombre()">male</a>
+                <a class="navbar-brand" href="#" onclick="mujer()">woman</a>
+                <a class="navbar-brand" href="#" onclick="joyeria()">jewelery</a>
+                <a class="navbar-brand" href="#" onclick="electro()">electro</a>
+                <a href="#" onclick="verCarrito()">
+                    <img src="img/carro-de-la-compra.png" alt="" width="30" height="24" id="carritoHeader">
+                </a>
+                <span class="contadorProductos">0</span>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="seccion loading " id="loading">
+            <h1>loading...</h1>
+        </div>
+        <div class="seccion home dNone" id="home">
+            <div class="hero">              
+            </div>
+            <div class="categorias">
+                <p>categorias</p>
+                <div class="container">
+                    <div id="categoria1" onclick="hombre()">
+                        <a href="#">
+                            <img src="img/004-male-clothes.png" alt="">
+                        </a>
+                        <h4>categoria 1</h4>
+                    </div>
+                    <div id="categoria2">
+                        <a href="#" onclick="mujer()">
+                            <img src="img/001-woman-clothes.png" alt="">
+                        </a>
+                        <h4>categoria 2</h4>
+                    </div>
+                    <div id="categoria3">
+                        <a href="#" onclick="joyeria()">
+                            <img src="img/002-diamond.png" alt="">
+                        </a>
+                        <h4>categoria 3</h4>
+                    </div>
+                    <div id="categoria4">
+                        <a href="#" onclick="electro()">
+                            <img src="img/003-responsive.png" alt="">
+                        </a>
+                        <h4>categoria 4</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="seccion lista dNone" id="lista">
+        </div>
+        <div class="seccion carrito dNone" id="carrito">
+            <ul class="list-group">
+                <li class="list-group-item">An item</li>
+                <li class="list-group-item">A second item</li>
+                <li class="list-group-item">A third item</li>
+                <li class="list-group-item">A fourth item</li>
+                <li class="list-group-item">And a fifth one</li>
+            </ul>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="comprar"
+                            data-bs-dismiss="modal">comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>wado 2022</p>
+    </footer>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
+        </script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
