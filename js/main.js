@@ -8,8 +8,7 @@ const carrito = document.querySelector('.carrito')
 const carritoHeader = document.querySelector('#carritoHeader')
 const contadorProductos = document.querySelector('.contadorProductos')
 const modal = document.querySelector('.modal-content')
-const btn = document.querySelector('.btn')
-const btnPrimary = document.querySelector('.btn-primary')
+const btnVerMas = document.querySelector('#verMas')
 const btnComprar = document.querySelector('#comprar')
 let contador = 0
 let productos = []
@@ -47,6 +46,7 @@ const productoRandom = () => {
                 <h1>${productRandom[0].title}</h1>
                 <button type="button" 
                     class="btn btn-primary" 
+                    id="verMas"
                     data-bs-toggle="modal" 
                     data-bs-target="#exampleModal">
                     ver mas
@@ -54,9 +54,6 @@ const productoRandom = () => {
             </div>
         </div>`
 }
-btn.addEventListener('click', () => {
-    console.log('boton ver mas')
-})
 /*     mostrando la lista de cada*/
 let hombre = () => {
     lista.innerHTML = ''
@@ -70,16 +67,17 @@ let hombre = () => {
                 <img src="${prod.image}" 
                 class="card-img-top" 
                 alt="...">
-            <div class="card-body">
-                <h5 class="card-title">${prod.title}</h5>
-                <p class="card-text">${prod.category}</p>
-                <button type="button" 
-                    class="btn btn-primary" 
-                    data-bs-toggle="modal" 
-                    data-bs-target="#exampleModal">
-                    ver mas
-                </button>
-            </div
+                <div class="card-body">
+                    <h5 class="card-title">${prod.title}</h5>
+                    <p class="card-text">${prod.category}</p>
+                    <button type="button" 
+                        class="btn btn-primary" 
+                        data-bs-toggle="modal" 
+                        data-bs-target="#exampleModal">
+                        ver mas
+                    </button>
+                </div>
+            </div>
             `
         }
     })
@@ -105,7 +103,8 @@ let mujer = () => {
                 data-bs-target="#exampleModal">
                 ver mas
                 </button>
-            </div
+            </div>
+            </div>
             `
         }
     })
@@ -131,7 +130,8 @@ let joyeria = () => {
                     data-bs-target="#exampleModal">
                     ver mas
                     </button>
-                </div
+                </div>
+                </div>
                 `
         }
     })
@@ -152,12 +152,13 @@ let electro = () => {
                     <h5 class="card-title">${prod.title}</h5>
                     <p class="card-text">${prod.category}</p>
                     <button type="button" 
-                        class="btn btn-primary" 
+                        class="btn btn-primary verMas" 
                         data-bs-toggle="modal" 
-                        data-bs-target="#exampleModal"
+                        data-bs-target="#exampleModal">
                         ver mas
                     </button>
-                </div
+                </div>
+                </div>
                 `
         }
     })
@@ -178,25 +179,27 @@ btnComprar.addEventListener('click', () => {
     contadorProductos.innerHTML = contador
 })
 
-btnPrimary.addEventListener('click', () => {
-    alert('ver producto')
-    /* modal.innerHTML = `
+btnVerMas.addEventListener('click', () => {
+    console.log('ver modal');
+    modal.innerHTML = '';
+
+    modal.innerHTML += `
     <div class="modal-body">
-        <h5 class="modal-title" 
-            id="exampleModalLabel">
-            titulo del producto
-        </h5>
-        <button type="button" 
-            class="btn-close" 
-            data-bs-dismiss="modal" 
-            aria-label="Close">
-        </button>
-        <img src="img/carro-de-la-compra.png" alt="">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A beatae eos hic, sequi, non totam
-            dolor architecto suscipit,
-            asperiores aspernatur amet sint debitis praesentium maxime eligendi alias. Accusamus,
-            eveniet ad!
-        </p>
-    </div> 
-    ` */
+                        <h5 class="modal-title" 
+                            id="exampleModalLabel">
+                            titulo del producto
+                        </h5>
+                        <button type="button" 
+                            class="btn-close" 
+                            data-bs-dismiss="modal" 
+                            aria-label="Close">
+                        </button>
+                        <img src="img/carro-de-la-compra.png" alt="">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A beatae eos hic, sequi, non totam
+                            dolor architecto suscipit,
+                            asperiores aspernatur amet sint debitis praesentium maxime eligendi alias. Accusamus,
+                            eveniet ad!
+                        </p>
+                    </div> 
+    `
 })
