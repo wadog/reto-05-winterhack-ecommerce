@@ -79,6 +79,12 @@ body {
   align-items: center;
   justify-content: space-around;
 }
+.container div{
+  height: 100%;
+}
+.categoria_productos:hover{
+  border:2px solid red;
+}
 .card{
   width: 200px !important;
   margin: 10px;
