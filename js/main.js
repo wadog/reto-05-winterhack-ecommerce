@@ -1,4 +1,3 @@
-
 const secciones = document.querySelectorAll('.seccion')
 const loading = document.querySelector('.loading')
 const home = document.querySelector('.home')
@@ -9,34 +8,41 @@ const carritoHeader = document.querySelector('#carritoHeader')
 const contadorProductos = document.querySelector('.contadorProductos')
 const modal = document.querySelector('.modal-content')
 const categoriaProductos = document.querySelectorAll('.categoria_productos')
-let contador = 0
+const contador = 0
 let productos = []
 let carritoCompra = []
 
 fetch('https://fakestoreapi.com/products/')
-    .then(res => {
-        if (!res.ok) {
-            throw new Error(`Error: ${res.status} - ${res.statusText}`);
-        }
-        return res.json();
-    })
-    .then(productos => {
-        console.log(productos, 'los productos extraidos');
-        productoRandom(productos);
-    })
-    .catch(error => {
-        console.error(error);
-    });
+.then(res => res.json())
+.then(json => {
+    productos = Object.values(json)
+    console.log(productos, 'los productos extraidos')
+    productoRandom()
+})
+.catch(error => console.error(error))
 
+//fetch('https://fakestoreapi.com/products/')
+//    .then(res => {
+//        if (!res.ok) {
+//            throw new Error(`Error: ${res.status} - ${res.statusText}`);
+//        }
+//        return res.json();
+//    })
+//    .then(productos => {
+//        console.log(productos, 'los productos extraidos');
+//        productoRandom(productos);
+//    })
+//    .catch(error => {
+//        console.error(error);
+//    });
 
-// fetch('https://fakestoreapi.com/products/')
-// .then(res => res.json())
-// .then(json => {
-//     productos = Object.values(json)
-//     console.log(productos, 'los productos extraidos')
-//     productoRandom()
-// })
-// .catch(error => console.error(error))
+/* boton home */
+let volverHome = () => {
+    console.log('volviendo al inicio')
+    home.classList.remove('dNone')
+    lista.classList.add('dNone')
+    productoRandom()
+}
 
 const cargarPagina = () => {
     loading.classList.add('dNone')
@@ -45,9 +51,9 @@ const cargarPagina = () => {
 
 const inicio = setTimeout(cargarPagina, 2000)
 
-const productoRandom = (productos) => {
-    const random = Math.floor(Math.random() * productos.length)
-    const productRandom = productos[random]
+const productoRandom = () => {
+    const random = Math.floor(Math.random() * productos.length);
+    const productRandom = productos[random];
     hero.innerHTML = `
     <div class="container">
             <div class="col-6">
@@ -63,9 +69,7 @@ const productoRandom = (productos) => {
                 </button>
             </div>
         </div>`
-    console.log(hero)
-    const btnVerMas = document.querySelector('#btnVerMas')
-    console.log(btnVerMas)
+    const btnVerMas = document.querySelector('#btnVerMas');
     btnVerMas.addEventListener('click', () => {
         console.log('Soy un btn recien nacido')
         modal.innerHTML = '';
@@ -93,40 +97,41 @@ const productoRandom = (productos) => {
         btnComprar.addEventListener('click', () => {
             contador++
             contadorProductos.innerHTML = contador
-            })
         })
-    }
+    })
+}
 
-// document.addEventListener('click', (event) => {
-    //     let categoria = event.target.id
-    //     console.log(categoria);
-// //     lista.innerHTML = ''
-// //     lista.classList.remove('dNone')
-// //     home.classList.add('dNone')
-// //     console.log(`ver lista de productos ${categoria}`)
-// //     productos.forEach((prod) => {
-// //         if (prod.category == categoria) {
-// //             lista.innerHTML += `
-// //                 <div class="card" style="width: 18rem;">
-// //                     <img src="${prod.image}" 
-// //                     class="card-img-top" 
-// //                     alt="...">
-// //                     <div class="card-body">
-// //                         <h5 class="card-title">${prod.title}</h5>
-// //                         <p class="card-text">${prod.category}</p>
-// //                         <button type="button" 
-// //                             class="btn btn-primary" 
-// //                             data-bs-toggle="modal" 
-// //                             data-bs-target="#exampleModal">
-// //                             ver mas
-// //                         </button>
-// //                     </div>
-// //                 </div>
-// //                 `
-// //         }
-// //     })
-// })
-// /*     mostrando la lista de cada*/
+document.addEventListener('click', (event) => {
+    let categoria = event.target.id
+    productos.forEach((prod) => {
+        if (prod.category === categoria) {
+            console.log(categoria);
+            lista.innerHTML = ''
+            lista.classList.remove('dNone')
+            home.classList.add('dNone')
+            console.log(`ver lista de productos ${categoria}`)
+            lista.innerHTML += `
+                <div class="card" style="width: 18rem;">
+                    <img src="${prod.image}" 
+                    class="card-img-top" 
+                    alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">${prod.title}</h5>
+                        <p class="card-text">${prod.category}</p>
+                        <button type="button" 
+                            class="btn btn-primary" 
+                            data-bs-toggle="modal" 
+                            data-bs-target="#exampleModal">
+                            ver mas
+                        </button>
+                    </div>
+                </div>
+                `
+        }
+    })
+})
+
+/*     mostrando la lista de cada*/
 
 // let mujer = () => {
 //     lista.innerHTML = ''
@@ -213,17 +218,12 @@ const productoRandom = (productos) => {
 // let verCarrito = (e) => {
 //     alert('iendo al acarrito')
 // }
-// /* boton home */
-// let volverHome = () => {
-//     home.classList.remove('dNone')
-//     lista.classList.add('dNone')
-//     productoRandom()
-// }
+
 
 
 // const productDescription = (productoRandom, index) => {
 //     const { image, title, description, price } = productoRandom[index]
 //     console.log('ver mas')
-// }
+//
 
 
