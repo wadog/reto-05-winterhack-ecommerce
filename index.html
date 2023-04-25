@@ -46,11 +46,13 @@
                 </a>
             </div>
             <div class="container">
-                <a class="navbar-brand categoria_productos" href="#" ">male</a>
-                <a class="navbar-brand categoria_productos" href="#" ">woman</a>
-                <a class="navbar-brand categoria_productos" href="#" ">jewelery</a>
-                <a class="navbar-brand categoria_productos" href="#" ">electro</a>
-                <a href="#" onclick="verCarrito()">
+                <div class="categoria_productos">
+                    <a class="men's clothing" href="#">male</a>
+                    <a class="women's clothing" href="#">woman</a>
+                    <a class="jewelery" href="#">jewelery</a>
+                    <a class="electronics" href="#">electro</a>
+                </div>
+                <a href=" #" onclick="verCarrito()">
                     <img src="img/carro-de-la-compra.png" alt="" width="30" height="24" id="carritoHeader">
                 </a>
                 <span class="contadorProductos">0</span>
@@ -62,26 +64,40 @@
             <h1>loading...</h1>
         </div>
         <div class="seccion home dNone" id="home">
-            <div class="hero">              
+            <div class="hero">
             </div>
-            <div class="categorias">
+            <div class="categoria">
                 <p>categorias</p>
                 <div class="container">
-                    <div id="men's clothing" class="categoria_productos">
-                            <img src="img/004-male-clothes.png" alt="" >
-                            <h4>men's clothing</h4>
-                    </div>
-                    <div id="women's clothing" class="categoria_productos">
+                    <div class="categoria_productos">
+                        <div>
+                            <h4>hombre</h4>
+                            <img src="img/004-male-clothes.png" alt="">
+                            <a class="men's clothing" href="#">
+                                ver
+                            </a>
+                        </div>
+                        <div>
+                            <h4>mujer</h4>
                             <img src="img/001-woman-clothes.png" alt="">
-                        <h4>women's clothing</h4>
-                    </div>
-                    <div id="jewelery" class="categoria_productos">
+                            <a class="women's clothing" href="#">
+                                ver
+                            </a>
+                        </div>
+                        <div>
+                            <h4>joyeria</h4>
                             <img src="img/002-diamond.png" alt="">
-                        <h4>jewelery</h4>
-                    </div>
-                    <div id="electronics" class="categoria_productos">
+                            <a class="jewelery" href="#">
+                                ver
+                            </a>
+                        </div>
+                        <div>
+                            <h4>electronica</h4>
                             <img src="img/003-responsive.png" alt="">
-                        <h4>electronic</h4>
+                            <a class="electronics" href="#">
+                                ver
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -101,8 +117,8 @@
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    
-                    
+
+
                 </div>
             </div>
         </div>
