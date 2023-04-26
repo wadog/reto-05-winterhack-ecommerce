@@ -11,7 +11,7 @@ const categoriaProductos = document.querySelectorAll('.categoria_productos')
 const contador = 0
 let productos = []
 let carritoCompra = []
-console.log(categoriaProductos)
+
 fetch('https://fakestoreapi.com/products/')
     .then(res => res.json())
     .then(json => {
@@ -89,12 +89,12 @@ const productoRandom = () => {
 categoriaProductos.forEach(categoria => {
     categoria.addEventListener('click', (event) => {
         const categoriaSeleccionada = event.target.className;
-            console.log(categoriaSeleccionada)
+            //console.log(categoriaSeleccionada)
         const productosFiltrados = productos.filter(producto => producto.category === categoriaSeleccionada)
-            console.log(productosFiltrados)
+            //console.log(productosFiltrados)
         lista.innerHTML = '';
         productosFiltrados.forEach(producto => {
-            console.log(producto)
+            //console.log(producto)
             const productoHTML = `
                 <div class="card" style="width: 18rem;">
                     <img src="${producto.image}"
@@ -118,37 +118,6 @@ categoriaProductos.forEach(categoria => {
         lista.classList.remove('dNone');
     })
 })
-
-//document.addEventListener('click', (event) => {
-//    let categoria = event.target.classList
-//    productos.forEach((prod) => {
-//        if (prod.category === categoria) {
-//            console.log(categoria);
-//            lista.innerHTML = ''
-//            lista.classList.remove('dNone')
-//            home.classList.add('dNone')
-//            console.log(`ver lista de productos ${categoria}`)
-//            lista.innerHTML += `
-//                        <div class="card" style="width: 18rem;">
-//                            <img src="${prod.image}"
-//                            class="card-img-top"
-//                            alt="...">
-//                            <div class="card-body">
-//                                <h5 class="card-title">${prod.title}</h5>
-//                                <p class="card-text">${prod.category}</p>
-//                                <button type="button"
-//                                    class="btn btn-primary"
-//                                    data-bs-toggle="modal"
-//                                    data-bs-target="#exampleModal">
-//                                    ver mas
-//                                </button>
-//                            </div>
-//                        </div>
-//                        `
-//        }
-//    })
-//})
-//
 
 /* agregando productos al carrito */
 let verCarrito = () => {
