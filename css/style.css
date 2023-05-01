@@ -21,7 +21,6 @@ body {
 }
 /* HEADER */
 .header {
-  border: solid 1px orange;
   display: flex;
   justify-content: space-between;
   padding: 0 10px 0 10px;
@@ -36,7 +35,6 @@ body {
   margin-right: 15px;
 }
 .home {
-  border: solid 1px red;
   flex-direction: column;
   height: 667px;
 }
@@ -63,7 +61,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: solid 10px greenyellow;
 }
 .categorias img{
   width: 100px;
@@ -94,9 +91,7 @@ body {
   height: 100%;
   width: 100%;
 }
-.categoria_productos:hover{
-  border:2px solid red;
-}
+
 .card{
   width: 200px !important;
   margin: 10px;
@@ -112,6 +107,7 @@ body {
 }
 .modal-body{
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 .modal-body img{
